@@ -1,21 +1,29 @@
 [
   // NAVIGATION
   {
-    "key": "ctrl+shift+a",
+    "key": "shift+a",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+b",
+    "key": "shift+b",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
+  // If terminal is NOT focused, focus the terminal
   {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.togglePanel"
+    "key": "ctrl+shift+;",
+    "command": "workbench.action.terminal.focus",
+    "when": "!terminalFocus"
+  },
+  // If terminal IS focused, hide the panel
+  {
+    "key": "ctrl+shift+;",
+    "command": "workbench.action.togglePanel",
+    "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+n",
+    "key": "shift+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
   },
@@ -48,11 +56,6 @@
     "key": "shift+n",
     "command": "explorer.newFolder",
     "when": "explorerViewletFocus"
-  },
-  {
-    "key": "shift+n",
-    "command": "workbench.action.newWindow",
-    "when": "!explorerViewletFocus"
   },
   {
     "command": "deleteFile",
